@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.FileRoller",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.36",
+    "runtime-version" : "3.38",
     "sdk" : "org.gnome.Sdk",
     "command" : "file-roller",
     "rename-icon": "org.gnome.ArchiveManager",
@@ -20,22 +20,6 @@
     ],
     "modules" : [
         {
-            "name": "gcpio",
-            "buildsystem": "autotools",
-            "cleanup": [
-                "/libexec",
-                "/share/info",
-                "/share/man"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.gz",
-                    "sha256": "e87470d9c984317f658567c03bfefb6b0c829ff17dbf6b0de48d71a4c8f3db88"
-                }
-            ]
-        },
-        {
             "name": "p7zip",
             "no-autogen": true,
             "make-args": [
@@ -52,6 +36,10 @@
                     "commands": [
                         "sed -i 's|/usr/local|/app|g' makefile.common"
                     ]
+                },
+                {
+                    "type": "patch",
+                    "path" : "p7zip-gcc10.patch"
                 }
             ]
         },
