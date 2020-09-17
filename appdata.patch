@@ -6,7 +6,7 @@
    </provides>
 +
 +  <releases>
-+    <release version="3.36.3" date="2020-08-08"/>
++    <release version="3.38.0" date="2020-09-12"/>
 +  </releases>
 +
 +  <content_rating type="oars-1.1" />
