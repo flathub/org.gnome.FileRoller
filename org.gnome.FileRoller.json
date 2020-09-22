@@ -44,16 +44,49 @@
             ]
         },
         {
-            "name": "unrar",
-            "no-autogen": true,
-            "make-install-args": [
-                "DESTDIR=/app"
+            "name": "gnustep-make",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./configure --prefix=/app",
+                "make -j $FLATPAK_BUILDER_N_JOBS install"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.rarlab.com/rar/unrarsrc-5.9.1.tar.gz",
-                    "sha256": "0eb1d1b8e02102fccae775a6d6b79336b69e2cf90e2045de92594dcfb58de100"
+                    "url": "https://github.com/gnustep/tools-make/releases/download/make-2_8_0/gnustep-make-2.8.0.tar.gz",
+                    "sha256": "9fce2942dd945c103df37d668dd5fff650b23351b25a650428f6f59133f5ca5d"
+                }
+            ]
+        },
+        {
+            "name": "gnustep",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./configure --prefix=/app",
+                "make -j $FLATPAK_BUILDER_N_JOBS install",
+                "ls /app/include"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/gnustep/libs-base/releases/download/base-1_27_0/gnustep-base-1.27.0.tar.gz",
+                    "sha256": "8803fa1fdf23f90264a81ad2d9fbe97ba66d6e313e396a28fd7c10d2caceb283"
+                }
+            ]
+        },
+        {
+            "name": "unar",
+            "buildsystem": "simple",
+            "build-commands": [
+                "sed -s -i 's#/usr/include/GNUstep#/app/include#g' */Makefile.linux",
+                "make -C XADMaster -j $FLATPAK_BUILDER_N_JOBS -f Makefile.linux",
+                "install -m755 XADMaster/unar XADMaster/lsar /app/bin/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/MacPaw/unar/archive/v1.10.7.tar.gz",
+                    "sha256": "6ab8f01f7db8bc88e6e8e08a1d79fb7ef8e9fb1d940c748d0a329a2d6d331016"
                 }
             ]
         },
