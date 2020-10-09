@@ -13,6 +13,7 @@
         "--filesystem=home",
         "--talk-name=org.gtk.vfs",
         "--talk-name=org.gtk.vfs.*",
+        "--metadata=X-DConf=migrate-path=/org/gnome/file-roller/",
         "--filesystem=xdg-run/gvfs"
     ],
     "cleanup" : [
