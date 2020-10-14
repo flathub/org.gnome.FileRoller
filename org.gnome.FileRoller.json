@@ -102,10 +102,6 @@
                 {
                     "type": "patch",
                     "path": "cpio-2.13-exitCode.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "cpio-2.13-mutiple-definition.patch"
                 }
             ]
         },
