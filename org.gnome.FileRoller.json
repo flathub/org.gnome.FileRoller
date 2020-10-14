@@ -92,6 +92,43 @@
             ]
         },
         {
+            "name": "cpio",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.gz",
+                    "sha256": "e87470d9c984317f658567c03bfefb6b0c829ff17dbf6b0de48d71a4c8f3db88"
+                },
+                {
+                    "type": "patch",
+                    "path": "cpio-2.13-exitCode.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "cpio-2.13-mutiple-definition.patch"
+                }
+            ]
+        },
+        {
+            "name": "rpm2cpio",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D rpm2cpio.py /app/bin/rpm2cpio"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/ruda/rpm2cpio/archive/2017.tar.gz",
+                    "sha256": "d266a4f49e65b5d05956502549ceb1d5671f927375ff71299069e6d92363297a"
+                },
+                {
+                    "type": "patch",
+                    "path": "rpm2cpio.patch"
+                }
+            ]
+        },
+        {
             "name" : "file-roller",
             "buildsystem" : "meson",
             "cleanup": [
