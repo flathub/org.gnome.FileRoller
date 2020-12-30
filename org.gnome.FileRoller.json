@@ -104,6 +104,24 @@
             ]
         },
         {
+            "name": "rpm2cpio",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D rpm2cpio.py /app/bin/rpm2cpio"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/ruda/rpm2cpio/archive/2017.tar.gz",
+                    "sha256": "d266a4f49e65b5d05956502549ceb1d5671f927375ff71299069e6d92363297a"
+                },
+                {
+                    "type": "patch",
+                    "path": "rpm2cpio.patch"
+                }
+            ]
+        },
+        {
             "name" : "file-roller",
             "buildsystem" : "meson",
             "cleanup": [
