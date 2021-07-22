@@ -1,13 +1,12 @@
---- a/data/org.gnome.FileRoller.appdata.xml.in	2020-08-08 19:59:58.454878000 +0200
-+++ b/data/org.gnome.FileRoller.appdata.xml.in	2020-09-09 20:36:28.986887515 +0200
-@@ -46,4 +46,10 @@
-   <provides>
-     <id>org.gnome.FileRoller.desktop</id>
+diff --git a/data/org.gnome.FileRoller.appdata.xml.in b/data/org.gnome.FileRoller.appdata.xml.in
+index 8ebd8eec..114a92d2 100644
+--- a/data/org.gnome.FileRoller.appdata.xml.in
++++ b/data/org.gnome.FileRoller.appdata.xml.in
+@@ -48,6 +48,7 @@
    </provides>
-+
-+  <releases>
-+    <release version="3.38.0" date="2020-09-12"/>
-+  </releases>
-+
-+  <content_rating type="oars-1.1" />
- </component>
+ 
+   <releases>
++    <release version="3.40.0" date="2021-05-01"/>
+     <release version="3.38.0" date="2020-09-12"/>
+     <release version="3.36.3" date="2020-08-08"/>
+   </releases>

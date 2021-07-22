@@ -1,12 +1,12 @@
 {
-    "app-id" : "org.gnome.FileRoller",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "file-roller",
+    "app-id": "org.gnome.FileRoller",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "40",
+    "sdk": "org.gnome.Sdk",
+    "command": "file-roller",
     "rename-icon": "org.gnome.ArchiveManager",
     "copy-icon": true,
-    "finish-args" : [
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
@@ -16,10 +16,10 @@
         "--metadata=X-DConf=migrate-path=/org/gnome/file-roller/",
         "--filesystem=xdg-run/gvfs"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/share/man"
     ],
-    "modules" : [
+    "modules": [
         {
             "name": "p7zip",
             "no-autogen": true,
@@ -40,7 +40,7 @@
                 },
                 {
                     "type": "patch",
-                    "path" : "p7zip-gcc10.patch"
+                    "path": "p7zip-gcc10.patch"
                 }
             ]
         },
@@ -122,24 +122,24 @@
             ]
         },
         {
-            "name" : "file-roller",
-            "buildsystem" : "meson",
+            "name": "file-roller",
+            "buildsystem": "meson",
             "cleanup": [
                 "org.gnome.FileRoller.ArchiveManager1.service"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/3.38/file-roller-3.38.0.tar.xz",
-                    "sha256": "723d1c6e567d35dad5eeeaeb86b8d18705658ee73e0b3b97ea16adc7a4dc331a",
+                    "url": "https://download.gnome.org/sources/file-roller/3.40/file-roller-3.40.0.tar.xz",
+                    "sha256": "4a2886a3966200fb0a9cbba4e2b79f8dad9d26556498aacdaed71775590b3c0d",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "file-roller"
                     }
                 },
                 {
-                    "type" : "patch",
-                    "path" : "appdata.patch"
+                    "type": "patch",
+                    "path": "appdata.patch"
                 }
             ]
         }
