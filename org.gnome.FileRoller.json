@@ -11,10 +11,7 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--filesystem=home",
-        "--talk-name=org.gtk.vfs",
-        "--talk-name=org.gtk.vfs.*",
         "--metadata=X-DConf=migrate-path=/org/gnome/file-roller/",
-        "--filesystem=xdg-run/gvfs",
         "--own-name=org.gnome.ArchiveManager1"
     ],
     "cleanup": [
