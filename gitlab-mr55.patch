@@ -1,0 +1,74 @@
+diff --git a/src/dlg-open-with.c b/src/dlg-open-with.c
+index b797c61d6a22ad0decfb8d427d54f97a35db03a8..448fa3651e78a3f37665c7d383ce0f8d62a79534 100644
+--- a/src/dlg-open-with.c
++++ b/src/dlg-open-with.c
+@@ -36,56 +36,29 @@ typedef struct {
+ } OpenData;
+ 
+ 
+-static void
+-app_chooser_response_cb (GtkDialog *dialog,
+-			 int        response_id,
+-			 gpointer   user_data)
+-{
+-	OpenData *o_data = user_data;
+-	GAppInfo *app_info;
+-
+-	switch (response_id) {
+-	case GTK_RESPONSE_OK:
+-		app_info = gtk_app_chooser_get_app_info (GTK_APP_CHOOSER (dialog));
+-		if (app_info != NULL) {
+-			fr_window_open_files_with_application (o_data->window, o_data->file_list, app_info);
+-			g_object_unref (app_info);
+-		}
+-		g_free (o_data);
+-		gtk_widget_destroy (GTK_WIDGET (dialog));
+-		break;
+-
+-	case GTK_RESPONSE_CANCEL:
+-	case GTK_RESPONSE_DELETE_EVENT:
+-		g_free (o_data);
+-		gtk_widget_destroy (GTK_WIDGET (dialog));
+-		break;
+-
+-	default:
+-		break;
+-	}
+-}
+-
+-
+ void
+ dlg_open_with (FrWindow *window,
+ 	       GList    *file_list)
+ {
+ 	OpenData  *o_data;
+-	GtkWidget *app_chooser;
++	char      *uri;
++	GList     *scan;
++	GError    *error = NULL;
+ 
+ 	o_data = g_new0 (OpenData, 1);
+ 	o_data->window = window;
+ 	o_data->file_list = file_list;
+ 
+-	app_chooser = gtk_app_chooser_dialog_new (GTK_WINDOW (window),
+-						  GTK_DIALOG_MODAL,
+-						  G_FILE (file_list->data));
+-	g_signal_connect (app_chooser,
+-			  "response",
+-			  G_CALLBACK (app_chooser_response_cb),
+-			  o_data);
+-	gtk_widget_show (app_chooser);
++	for (scan = file_list; scan; scan = scan->next) {
++		uri = g_file_get_uri (G_FILE (scan->data));
++		if (!gtk_show_uri_on_window (GTK_WINDOW (window), uri, GDK_CURRENT_TIME, &error)) {
++			_gtk_error_dialog_run (GTK_WINDOW (window),
++					_("Could not perform the operation"),
++					"%s",
++					error->message);
++			g_clear_error (&error);
++		}
++	}
+ }
+ 
+ 
