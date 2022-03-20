@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.FileRoller",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "41",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command": "file-roller",
     "rename-icon": "org.gnome.ArchiveManager",
@@ -118,18 +118,15 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/3.40/file-roller-3.40.0.tar.xz",
-                    "sha256": "4a2886a3966200fb0a9cbba4e2b79f8dad9d26556498aacdaed71775590b3c0d",
+                    "url": "https://download.gnome.org/sources/file-roller/3.42/file-roller-3.42.0.tar.xz",
+                    "sha256": "1c438e6d53ec10ff4f2eb5b22d7bbf28a7c2a84957ab64a751c1cdf3c52302c7",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "file-roller"
                     }
                 },
                 {
-                    "type": "patch",
-                    "path": "appdata.patch"
-                },
-                {
+
                     "type": "patch",
                     "path": "gitlab-mr55.patch"
                 }
