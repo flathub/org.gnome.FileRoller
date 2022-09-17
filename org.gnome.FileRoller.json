@@ -118,15 +118,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/3.42/file-roller-3.42.0.tar.xz",
-                    "sha256": "1c438e6d53ec10ff4f2eb5b22d7bbf28a7c2a84957ab64a751c1cdf3c52302c7",
+                    "url": "https://download.gnome.org/sources/file-roller/43/file-roller-43.0.tar.xz",
+                    "sha256": "298729fdbdb9da8132c0bbc60907517d65685b05618ae05167335e6484f573a1",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "file-roller"
                     }
                 },
                 {
-
                     "type": "patch",
                     "path": "gitlab-mr55.patch"
                 }
