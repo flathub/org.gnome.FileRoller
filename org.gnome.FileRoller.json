@@ -1,7 +1,7 @@
 {
-    "app-id": "org.gnome.FileRoller",
+    "id": "org.gnome.FileRoller",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "file-roller",
     "finish-args": [
@@ -25,8 +25,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/jinfeihan57/p7zip/archive/refs/tags/v17.04.tar.gz",
-                    "sha256": "ea029a2e21d2d6ad0a156f6679bd66836204aa78148a4c5e498fe682e77127ef"
+                    "url": "https://github.com/p7zip-project/p7zip/archive/refs/tags/v17.05.tar.gz",
+                    "sha256": "d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6"
                 }
             ]
         },
@@ -40,8 +40,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/gnustep/tools-make/releases/download/make-2_9_0/gnustep-make-2.9.0.tar.gz",
-                    "sha256": "a0b066c11257879c7c85311dea69c67f6dc741ef339db6514f85b64992c40d2a"
+                    "url": "https://github.com/gnustep/tools-make/archive/refs/tags/make-2_9_1.tar.gz",
+                    "sha256": "78ef0f68402c379979a9a46499ac308fe5c1512aa198138c87649ee611aedf41"
                 }
             ]
         },
@@ -56,8 +56,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/gnustep/libs-base/releases/download/base-1_28_0/gnustep-base-1.28.0.tar.gz",
-                    "sha256": "c7d7c6e64ac5f5d0a4d5c4369170fc24ed503209e91935eb0e2979d1601039ed"
+                    "url": "https://github.com/gnustep/libs-base/archive/refs/tags/base-1_29_0.tar.gz",
+                    "sha256": "4dc7272a5c44844b823d31811af6a9f4e3bda04bb78139c0446f03ea4bdb2fd3"
                 }
             ]
         },
@@ -84,8 +84,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/facebook/zstd/releases/download/v1.4.8/zstd-1.4.8.tar.gz",
-                    "sha256": "32478297ca1500211008d596276f5367c54198495cf677e9439f4791a4c69f24"
+                    "url": "https://github.com/facebook/zstd/archive/refs/tags/v1.5.4.tar.gz",
+                    "sha256": "35ad983197f8f8eb0c963877bf8be50490a0b3df54b4edeb8399ba8a8b2f60a4"
                 }
             ]
         },
