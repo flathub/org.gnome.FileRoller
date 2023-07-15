@@ -40,49 +40,6 @@
             ]
         },
         {
-            "name": "gnustep-make",
-            "buildsystem": "simple",
-            "build-commands": [
-                "./configure --prefix=/app",
-                "make -j $FLATPAK_BUILDER_N_JOBS install"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/gnustep/tools-make/releases/download/make-2_9_1/gnustep-make-2.9.1.tar.gz",
-                    "sha256": "c3d6e70cf156b27e7d1ed2501c57df3f96e27488ce2f351b93e479c58c01eae7",
-                    "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/gnustep/tools-make/releases/latest",
-                        "version-query": ".tag_name | sub(\"^make-\"; \"\") | gsub(\"_\"; \".\")",
-                        "url-query": ".assets[] | select(.name==\"gnustep-make-\" + $version + \".tar.gz\") | .browser_download_url"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "gnustep",
-            "buildsystem": "simple",
-            "build-commands": [
-                "./configure --prefix=/app",
-                "make -j $FLATPAK_BUILDER_N_JOBS install",
-                "ls /app/include"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/gnustep/libs-base/releases/download/base-1_29_0/gnustep-base-1.29.0.tar.gz",
-                    "sha256": "fa58eda665c3e0b9c420dc32bb3d51247a407c944d82e5eed1afe8a2b943ef37",
-                    "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/gnustep/libs-base/releases/latest",
-                        "version-query": ".tag_name | sub(\"^base-\"; \"\") | gsub(\"_\"; \".\")",
-                        "url-query": ".assets[] | select(.name==\"gnustep-base-\" + $version + \".tar.gz\") | .browser_download_url"
-                    }
-                }
-            ]
-        },
-        {
             "name": "unrar",
             "no-autogen": true,
             "build-options": {
