@@ -46,13 +46,13 @@
                 "strip": true
             },
             "make-install-args": [
-              "DESTDIR=$(FLATPAK_DEST)"
+                "DESTDIR=$(FLATPAK_DEST)"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.rarlab.com/rar/unrarsrc-6.2.6.tar.gz",
-                    "sha256": "0c2d4cbc8b34d0e3bec7b474e0f52bbcc6c4320ec089b4141223ee355f63c318",
+                    "url": "https://www.rarlab.com/rar/unrarsrc-6.2.12.tar.gz",
+                    "sha256": "a008b5f949bca9bb4ffa1bebbfc8b3c14b89df10a10354809b845232d5f582e5",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 13306,
@@ -123,8 +123,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/43/file-roller-43.0.tar.xz",
-                    "sha256": "298729fdbdb9da8132c0bbc60907517d65685b05618ae05167335e6484f573a1",
+                    "url": "https://download.gnome.org/sources/file-roller/43/file-roller-43.1.tar.xz",
+                    "sha256": "84994023997293beb345d9793db8f5f0bbb41faa155c6ffb48328f203957ad08",
                     "x-checker-data": {
                         "type": "gnome",
                         "is-important": true,
