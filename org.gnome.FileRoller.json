@@ -1,10 +1,11 @@
 {
     "id": "org.gnome.FileRoller",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "file-roller",
     "finish-args": [
+        "--device=dri",
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
@@ -103,8 +104,8 @@
             "config-opts": [
                 "-Ddocs=false",
                 "-Dvapi=false",
-                "-Dbackend-gtk3=enabled",
-                "-Dbackend-gtk4=disabled"
+                "-Dbackend-gtk3=disabled",
+                "-Dbackend-gtk4=enabled"
             ],
             "sources": [
                 {
@@ -123,8 +124,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/43/file-roller-43.1.tar.xz",
-                    "sha256": "84994023997293beb345d9793db8f5f0bbb41faa155c6ffb48328f203957ad08",
+                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.tar.xz",
+                    "sha256": "5b1c0e6a2e7de75392bd424550c1e5643dd1cf6c333fb1ed6a76419a29507aa4",
                     "x-checker-data": {
                         "type": "gnome",
                         "is-important": true,
