@@ -1,0 +1,24 @@
+From 444d5605437fa20ded2d2dfbfdb89cc7d8955533 Mon Sep 17 00:00:00 2001
+From: Maximiliano Sandoval <msandova@gnome.org>
+Date: Thu, 28 Mar 2024 22:33:39 +0100
+Subject: [PATCH] appdata: Add 44.0 release
+
+---
+ data/org.gnome.FileRoller.appdata.xml.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/org.gnome.FileRoller.appdata.xml.in b/data/org.gnome.FileRoller.appdata.xml.in
+index cd5ca714..53abb78b 100644
+--- a/data/org.gnome.FileRoller.appdata.xml.in
++++ b/data/org.gnome.FileRoller.appdata.xml.in
+@@ -55,6 +55,7 @@
+   </provides>
+ 
+   <releases>
++    <release version="44.0" date="2024-03-24"/>
+     <release version="43.0" date="2022-09-17"/>
+     <release version="43~alpha" date="2022-08-17" type="development"/>
+     <release version="3.42.0" date="2022-03-20"/>
+-- 
+2.44.0
+
