@@ -131,10 +131,6 @@
                         "is-important": true,
                         "name": "file-roller"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "0001-appdata-Add-44.0-release.patch"
                 }
             ]
         }
