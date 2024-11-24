@@ -52,8 +52,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.rarlab.com/rar/unrarsrc-6.2.12.tar.gz",
-                    "sha256": "a008b5f949bca9bb4ffa1bebbfc8b3c14b89df10a10354809b845232d5f582e5",
+                    "url": "https://www.rarlab.com/rar/unrarsrc-7.1.1.tar.gz",
+                    "sha256": "2e9cbc9d1c250b40f4a7a6a363b6ccfa3703e190534979d18c8c4ac5ae35dafc",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 13306,
@@ -133,8 +133,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.3.tar.xz",
-                    "sha256": "04c8a74625fec84267fdec40306afb4104bd332d85061e0d36d4ab0533adfa4a",
+                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.4.tar.xz",
+                    "sha256": "b8c309da3aa784c719558c3466402378f4a3d6cae8ed77cf6849aacd56ceb9ec",
                     "x-checker-data": {
                         "type": "gnome",
                         "is-important": true,
