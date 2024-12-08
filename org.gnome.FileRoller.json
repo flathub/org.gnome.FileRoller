@@ -127,6 +127,9 @@
         {
             "name": "file-roller",
             "buildsystem": "meson",
+            "config-opts": [
+                "-Duse_native_appchooser=true"
+            ],
             "cleanup": [
                 "org.gnome.FileRoller.ArchiveManager1.service"
             ],
