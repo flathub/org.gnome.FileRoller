@@ -18,24 +18,23 @@
     ],
     "modules": [
         {
-            "name": "p7zip",
-            "no-autogen": true,
-            "make-args": [
-                "7z"
-            ],
-            "make-install-args": [
-                "DEST_HOME=/app"
+            "name": "7zip",
+            "buildsystem": "simple",
+            "subdir": "CPP/7zip/Bundles/Alone7z",
+            "build-commands": [
+                "make -j $FLATPAK_BUILDER_N_JOBS -f makefile.gcc",
+                "install -D ./_o/7zr -t /app/bin",
+                "ln -s /app/bin/7zr /app/bin/7z"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/p7zip-project/p7zip/archive/refs/tags/v17.05.tar.gz",
-                    "sha256": "d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6",
+                    "url": "https://github.com/ip7z/7zip/archive/refs/tags/25.00.tar.gz",
+                    "sha256": "81832d14c91206e5d4abdf15d8222cb0824e3cfafc7ee1483ccd2b5929c21f3d",
                     "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/p7zip-project/p7zip/releases/latest",
-                        "version-query": ".tag_name",
-                        "url-query": "\"https://github.com/p7zip-project/p7zip/archive/refs/tags/\\($version).tar.gz\""
+                        "type": "anitya",
+                        "project-id": 372314,
+                        "url-template": "https://github.com/ip7z/7zip/archive/refs/tags/$version.tar.gz"
                     }
                 }
             ]
