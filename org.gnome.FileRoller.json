@@ -40,28 +40,6 @@
             ]
         },
         {
-            "name": "unrar",
-            "no-autogen": true,
-            "build-options": {
-                "strip": true
-            },
-            "make-install-args": [
-                "DESTDIR=$(FLATPAK_DEST)"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.rarlab.com/rar/unrarsrc-7.1.10.tar.gz",
-                    "sha256": "72a9ccca146174f41876e8b21ab27e973f039c6d10b13aabcb320e7055b9bb98",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 13306,
-                        "url-template": "https://www.rarlab.com/rar/unrarsrc-$version.tar.gz"
-                    }
-                }
-            ]
-        },
-        {
             "name": "zstd",
             "buildsystem": "meson",
             "subdir": "build/meson",
