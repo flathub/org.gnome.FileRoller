@@ -22,10 +22,34 @@
         {
             "name": "7zip",
             "buildsystem": "simple",
-            "subdir": "CPP/7zip/Bundles/Alone7z",
+            "subdir": "CPP/7zip/Bundles/Alone2",
+            "build-options" : {
+                "env": {
+                    "makefile": "../../cmpl_gcc.mak"
+                },
+                "arch": {
+                    "aarch64": {
+                        "env": {
+                            "makefile": "../../cmpl_gcc_arm64.mak"
+                        }
+                    },
+                    "i686": {
+                        "env": {
+                            "makeFlags": "USE_ASM=",
+                            "makefile": "../../cmpl_gcc_x86.mak"
+                        }
+                    },
+                    "x86_64": {
+                        "env": {
+                            "makeFlags": "USE_ASM=",
+                            "makefile": "../../cmpl_gcc_x64.mak"
+                        }
+                    }
+                }
+            },
             "build-commands": [
-                "make -j $FLATPAK_BUILDER_N_JOBS -f makefile.gcc",
-                "install -D ./_o/7zr -t /app/bin"
+                "make -j $FLATPAK_BUILDER_N_JOBS -f $makefile $makeFlags",
+                "install -D b/*/7zz -t /app/bin"
             ],
             "sources": [
                 {
