@@ -1,0 +1,94 @@
+{
+    "name": "unarchiver",
+    "buildsystem": "simple",
+    "build-commands": [
+        "sed -s -i 's#/usr/include/GNUstep#/app/include#g' */Makefile.linux",
+        "make -C XADMaster -j $FLATPAK_BUILDER_N_JOBS -f Makefile.linux",
+        "install -m755 XADMaster/unar XADMaster/lsar /app/bin/"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://github.com/MacPaw/XADMaster/archive/v1.10.8/XADMaster-v1.10.8.tar.gz",
+            "sha256": "652953d7988b3c33f4f52b61c357afd1a7c2fc170e5e6e2219f4432b0c4cd39f",
+            "dest": "XADMaster",
+            "x-checker-data": {
+                "type": "json",
+                "url": "https://api.github.com/repos/MacPaw/XADMaster/releases/latest",
+                "version-query": ".tag_name | sub(\"^v\"; \"\")",
+                "url-query": "\"https://github.com/MacPaw/XADMaster/archive/v\" + $version + \".tar.gz\""
+            }
+        },
+        {
+            "type": "archive",
+            "url": "https://github.com/MacPaw/universal-detector/archive/1.1/universal-detector-1.1.tar.gz",
+            "sha256": "8e8532111d0163628eb828a60d67b53133afad3f710b1967e69d3b8eee28a811",
+            "dest": "UniversalDetector",
+            "x-checker-data": {
+                "type": "json",
+                "url": "https://api.github.com/repos/MacPaw/universal-detector/releases/latest",
+                "version-query": ".tag_name | sub(\"^\"; \"\")",
+                "url-query": "\"https://github.com/MacPaw/universal-detector/archive/\" + $version + \".tar.gz\""
+            }
+        },
+        {
+            "type": "patch",
+            "path": "patches/unar-int-conversion.patch"
+        }
+    ],
+    "modules": [
+        {
+            "name": "gnustep-make",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./configure --prefix=/app",
+                "make -j $FLATPAK_BUILDER_N_JOBS install"
+            ],
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/gnustep/tools-make/releases/download/make-2_9_1/gnustep-make-2.9.1.tar.gz",
+                    "sha256": "c3d6e70cf156b27e7d1ed2501c57df3f96e27488ce2f351b93e479c58c01eae7",
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/gnustep/tools-make/releases/latest",
+                        "version-query": ".tag_name | sub(\"^make-\"; \"\") | gsub(\"_\"; \".\")",
+                        "url-query": ".assets[] | select(.name==\"gnustep-make-\" + $version + \".tar.gz\") | .browser_download_url"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gnustep",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./configure --prefix=/app --disable-xml",
+                "make -j $FLATPAK_BUILDER_N_JOBS install",
+                "ls /app/include"
+            ],
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/gnustep/libs-base/releases/download/base-1_31_1/gnustep-base-1.31.1.tar.gz",
+                    "sha256": "e7546f1c978a7c75b676953a360194a61e921cb45a4804497b4f346a460545cd",
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/gnustep/libs-base/releases/latest",
+                        "version-query": ".tag_name | sub(\"^base-\"; \"\") | gsub(\"_\"; \".\")",
+                        "url-query": ".assets[] | select(.name==\"gnustep-base-\" + $version + \".tar.gz\") | .browser_download_url"
+                    }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/gnustep-fix-signal-handler.patch"
+                }
+            ]
+        }
+    ]
+}

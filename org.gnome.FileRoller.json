@@ -1,7 +1,7 @@
 {
     "id": "org.gnome.FileRoller",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "50",
+    "runtime-version": "51",
     "sdk": "org.gnome.Sdk",
     "command": "file-roller",
     "finish-args": [
@@ -19,6 +19,7 @@
         "/share/man"
     ],
     "modules": [
+        "unarchiver.json",
         {
             "name": "7zip",
             "buildsystem": "simple",
@@ -31,12 +32,6 @@
                     "aarch64": {
                         "env": {
                             "makefile": "../../cmpl_gcc_arm64.mak"
-                        }
-                    },
-                    "i686": {
-                        "env": {
-                            "makeFlags": "USE_ASM=",
-                            "makefile": "../../cmpl_gcc_x86.mak"
                         }
                     },
                     "x86_64": {
@@ -54,13 +49,29 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/ip7z/7zip/archive/refs/tags/26.02.tar.gz",
-                    "sha256": "7e5600ad0b21918bc41803bd84d0c2967e097fb7fbaa2e7aeb90beeb1121e54b",
+                    "url": "https://github.com/ip7z/7zip/archive/refs/tags/26.06.tar.gz",
+                    "sha256": "63bbf0ede83e4286ec8a2905ed732a12acc36dd4771984d870b054240ce761fa",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 372314,
                         "url-template": "https://github.com/ip7z/7zip/archive/refs/tags/$version.tar.gz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/7zip-fix.patch"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/ip7z/7zip/refs/heads/main/DOC/copying.txt",
+                    "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+                   "dest-filename": "COPYING"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/ip7z/7zip/refs/heads/main/DOC/License.txt",
+                    "sha256": "dac8389b6bc39339537bc351772106afe7951cb242cdf03e855b67c3a683deb1",
+                    "dest-filename": "LICENSE"
                 }
             ]
         },
@@ -74,37 +85,17 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/ruda/rpm2cpio/archive/2017.tar.gz",
-                    "sha256": "d266a4f49e65b5d05956502549ceb1d5671f927375ff71299069e6d92363297a"
+                    "sha256": "d266a4f49e65b5d05956502549ceb1d5671f927375ff71299069e6d92363297a",
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/ruda/rpm2cpio/releases/latest",
+                        "version-query": ".tag_name",
+                        "url-query": "\"https://github.com/ruda/rpm2cpio/archive/\" + $version + \".tar.gz\""
+                    }
                 },
                 {
                     "type": "patch",
-                    "path": "rpm2cpio.patch"
-                }
-            ]
-        },
-        {
-            "name": "libportal",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Ddocs=false",
-                "-Dvapi=false",
-                "-Dtests=false",
-                "-Dintrospection=false",
-                "-Dbackend-gtk3=disabled",
-                "-Dbackend-qt5=disabled",
-                "-Dbackend-gtk4=enabled"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/flatpak/libportal/releases/download/0.10.0/libportal-0.10.0.tar.xz",
-                    "sha256": "1c74a3f7becbd4ff745d7f565afd06e97e50eb080a0e268cb14bb55289a745bf",
-                    "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/flatpak/libportal/releases/latest",
-                        "version-query": ".tag_name",
-                        "url-query": ".assets[] | select(.name==\"libportal-\" + $version + \".tar.xz\") | .browser_download_url"
-                    }
+                    "path": "patches/rpm2cpio.patch"
                 }
             ]
         },
@@ -120,12 +111,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.7.tar.xz",
-                    "sha256": "67cada96a2409c859f378e82fbe868b0e9c00a69e6b7b885d542c64ea2a1297d",
+                    "url": "https://gitlab.gnome.org/GNOME/file-roller/-/archive/44.8/file-roller-44.8.tar.gz",
+                    "sha256": "86b642995bbc91e08b9a9416def85e6b85c74998510e5ac9bc0e3a91e48af3ee",
                     "x-checker-data": {
+                        "is-main-source": true,
                         "type": "gnome",
-                        "is-important": true,
-                        "name": "file-roller"
+                        "name": "file-roller",
+                        "versions": {">": "44.8"}
                     }
                 }
             ]
