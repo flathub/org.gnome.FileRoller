@@ -58,7 +58,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "7zip-fix.patch"
+                    "path": "patches/7zip-fix.patch"
                 }
             ]
         },
@@ -76,7 +76,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "rpm2cpio.patch"
+                    "path": "patches/rpm2cpio.patch"
                 }
             ]
         },
