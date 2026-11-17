@@ -59,6 +59,18 @@
                 {
                     "type": "patch",
                     "path": "patches/7zip-fix.patch"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/ip7z/7zip/refs/heads/main/DOC/copying.txt",
+                    "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+                   "dest-filename": "COPYING"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/ip7z/7zip/refs/heads/main/DOC/License.txt",
+                    "sha256": "dac8389b6bc39339537bc351772106afe7951cb242cdf03e855b67c3a683deb1",
+                    "dest-filename": "LICENSE"
                 }
             ]
         },
