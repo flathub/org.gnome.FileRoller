@@ -84,7 +84,13 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/ruda/rpm2cpio/archive/2017.tar.gz",
-                    "sha256": "d266a4f49e65b5d05956502549ceb1d5671f927375ff71299069e6d92363297a"
+                    "sha256": "d266a4f49e65b5d05956502549ceb1d5671f927375ff71299069e6d92363297a",
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/ruda/rpm2cpio/releases/latest",
+                        "version-query": ".tag_name",
+                        "url-query": "\"https://github.com/ruda/rpm2cpio/archive/\" + $version + \".tar.gz\""
+                    }
                 },
                 {
                     "type": "patch",
