@@ -19,6 +19,7 @@
         "/share/man"
     ],
     "modules": [
+        "unarchiver.json",
         {
             "name": "7zip",
             "buildsystem": "simple",
