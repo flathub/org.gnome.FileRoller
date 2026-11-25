@@ -54,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/ip7z/7zip/archive/refs/tags/26.02.tar.gz",
-                    "sha256": "7e5600ad0b21918bc41803bd84d0c2967e097fb7fbaa2e7aeb90beeb1121e54b",
+                    "url": "https://github.com/ip7z/7zip/archive/refs/tags/26.06.tar.gz",
+                    "sha256": "63bbf0ede83e4286ec8a2905ed732a12acc36dd4771984d870b054240ce761fa",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 372314,
@@ -97,8 +97,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/flatpak/libportal/releases/download/0.10.0/libportal-0.10.0.tar.xz",
-                    "sha256": "1c74a3f7becbd4ff745d7f565afd06e97e50eb080a0e268cb14bb55289a745bf",
+                    "url": "https://github.com/flatpak/libportal/releases/download/0.11.0/libportal-0.11.0.tar.xz",
+                    "sha256": "abb9e452a1c372133bd3eb8f0bb30d07b2d0a8fb02001c4155cf287555db4040",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/flatpak/libportal/releases/latest",
@@ -120,8 +120,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.7.tar.xz",
-                    "sha256": "67cada96a2409c859f378e82fbe868b0e9c00a69e6b7b885d542c64ea2a1297d",
+                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.8.tar.xz",
+                    "sha256": "40a560efe9fff957376fd92358580839acc79e2065addbf8491f7a14438c5755",
                     "x-checker-data": {
                         "type": "gnome",
                         "is-important": true,
