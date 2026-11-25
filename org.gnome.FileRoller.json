@@ -111,13 +111,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.gnome.org/GNOME/file-roller/-/archive/44.8/file-roller-44.8.tar.gz",
-                    "sha256": "86b642995bbc91e08b9a9416def85e6b85c74998510e5ac9bc0e3a91e48af3ee",
+                    "url": "https://download.gnome.org/sources/file-roller/44/file-roller-44.8.tar.xz",
+                    "sha256": "40a560efe9fff957376fd92358580839acc79e2065addbf8491f7a14438c5755",
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "gnome",
-                        "name": "file-roller",
-                        "versions": {">": "44.8"}
+                        "name": "file-roller"
                     }
                 }
             ]
